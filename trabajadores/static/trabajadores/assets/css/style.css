@@ -1,0 +1,20 @@
+
+    
+    body {background-color: rgb(105, 187, 169);
+        width: 100%;
+        text-align: right;
+        top: 50%}
+    
+    .div-navegacion {
+        width: 80%;
+        text-align: right;
+    }
+    
+    .logo-img {
+        width: 40%; 
+        max-width: 150px;
+        height: auto;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+    }
