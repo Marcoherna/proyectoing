@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario Farmacia Ahorrito</title>
+    <link rel="stylesheet" href="{% static 'inventario/assets/css/style.css' %}">
+</head>
+<body>
+
+    <div class="div-navegacion"> <a href="{% url 'menu' %}"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+      </svg> </a> Volver a Inicio </div>
+    <div class="logo-container">
+        <img class="logo-img" src="{% static 'inventario/assets/img/logo farmacia ahorrito.png' %}" alt="Logo Farmacia">    </div>
+
+
+    <h1>Inventario Farmacia Ahorrito</h1>
+    
+    <div class="form-container">
+        <h2>Añadir Producto</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Añadir Producto</button>
+        </form>
+    </div>
+    
+    <div class="inventory-container">
+        <h2>Inventario</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Proveedor</th>
+                    <th>Cantidad</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for producto in productos %}
+                <tr>
+                    <td>{{ producto.nombre }}</td>
+                    <td>{{ producto.descripcion }}</td>
+                    <td>{{ producto.precio }}</td>
+                    <td>{{ producto.proveedor }}</td>
+                    <td>{{ producto.cantidad }}</td>
+                    <td>
+                        <a href="{% url 'update_quantity' producto.id 'decrease' %}" class="action-btn decrease">-</a>
+                        <a href="{% url 'update_quantity' producto.id 'increase' %}" class="action-btn increase">+</a>
+                        <a href="{% url 'eliminar_producto' producto.id %}" class="action-btn delete">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
