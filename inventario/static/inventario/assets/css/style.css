@@ -1,0 +1,148 @@
+.pesado {font-weight: bolder;
+    text-align:left;}
+    
+    body {background-color: rgb(105, 187, 169);}
+    
+    .div-navegacion {
+        width: 100%;
+        text-align: right;
+    }
+    
+    .logo-img {
+        width: 80%; 
+        max-width: 190px;
+        height: auto;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+    }
+
+h1 {
+    margin: 40px 40;
+}
+
+.form-container, .inventory-container {
+    width: 80%;
+    max-width: 600px;
+    background: #a7a5a5;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input {
+    margin-top: 5px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.action-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 5px; /* Añade margen derecho para separar los botones */
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.action-btn.decrease {
+    background-color: #3540dc;
+}
+
+.action-btn.increase {
+    background-color: #28a745;
+}
+
+.action-btn.delete {
+    background-color: #dc3545;
+}
+
+.action-btn:hover {
+    background-color: #0069d9;
+}
+
+.action-btn.decrease:hover {
+    background-color: #2341c8;
+}
+
+.action-btn.increase:hover {
+    background-color: #218838;
+}
+
+.action-btn.delete:hover {
+    background-color: #c82333;
+}
+
+.inventory-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.inventory-container th, .inventory-container td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.inventory-container th {
+    background-color: #f2f2f2;
+}
+
+.form-container {
+    margin-bottom: 20px;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container button {
+    align-self: flex-start;
+}
